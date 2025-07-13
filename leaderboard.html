@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dò Mìn - Bảng Xếp Hạng</title>
+    <link rel="stylesheet" href="../css/style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="leaderboard-container">
+        <h1 class="leaderboard-title">BẢNG XẾP HẠNG</h1>
+        <table class="leaderboard-table">
+            <thead>
+                <tr>
+                    <th class="col-rank">#</th>
+                    <th class="col-icon"></th> <th class="col-score">Thời gian (s)</th>
+                    <th class="col-player-name">Người chơi</th>
+                    <th class="col-difficulty">Độ khó</th>
+                    <th class="col-status">Trạng thái</th> <th class="col-date">Ngày chơi</th>
+                </tr>
+            </thead>
+            <tbody id="leaderboardBody">
+                </tbody>
+        </table>
+        <div class="nav-links-leaderboard">
+            <a href="../html/index.html" class="menu-button" id="backToMenuFromLeaderboard">⬅ Quay lại Menu chính</a> 
+            <button id="clearLeaderboardButton" class="menu-button clear-leaderboard-button">Xóa Bảng Xếp Hạng</button>
+        </div>
+    </div>
+
+    <audio id="backgroundMusicLeaderboard" loop>
+        <source src="../audio/Pink Panther (Theme Song).mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <script src="../js/leaderboard.js"></script> 
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="title-wrapper">
+            <div class="icon">
+                <img src="../image/images-removebg-preview.png" alt="icon">
+            </div>
+            <div class="pixel-grid">MINESWEEPER</div>
+        </div>
+
+        <div id="main-content-area">
+            <div class="menu" id="main-menu">
+                <a href="#" class="menu-button" id="playWithNameButton">Chơi mới</a>
+                <a href="../html/leaderboard.html" class="menu-button">Bảng xếp hạng</a>
+                <a href="#" class="menu-button" id="optionsButton">Tùy chọn</a>
+            </div>
+
+            <div class="difficulty-container" id="difficulty-container" style="display: none;">
+                <div class="difficulty-title">ĐỘ KHÓ</div>
+                <div class="difficulty-options">
+                    <div class="difficulty-card">
+                        <h3>DỄ</h3>
+                        <p>8 x 8 ô, 10 mìn</p>
+                        <a href="#" class="difficulty-button" data-level="easy">Chơi ngay</a>
+                    </div>
+                    <div class="difficulty-card">
+                        <h3>TRUNG BÌNH</h3>
+                        <p>12 x 12 ô, 20 mìn</p>
+                        <a href="#" class="difficulty-button" data-level="medium">Chơi ngay</a>
+                    </div>
+                    <div class="difficulty-card">
+                        <h3>KHÓ</h3>
+                        <p>16 x 16 ô, 40 mìn</p>
+                        <a href="#" class="difficulty-button" data-level="hard">Chơi ngay</a>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <a href="#" class="menu-button" onclick="goBack()">⬅ Quay lại</a>
+                </div>
+            </div>
+
+            <div class="options-container" id="options-container" style="display: none;">
+                <div class="options-title">TÙY CHỌN</div>
+                <div class="option-item">
+                    <h3>Âm thanh</h3>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%;">
+                        <div class="volume-slider-container">
+                            <i class="fas fa-volume-down"></i> 
+                            <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.5">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <button class="toggle-button" id="toggleMusicButton">BẬT</button>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <a href="#" class="menu-button" onclick="goBackFromOptions()">⬅ Quay lại</a>
+                </div>
+            </div>
+
+            <div id="game-screen-container" style="display: none;">
+                </div>
+        </div> 
+    </div>
+
+    <div class="overlay" id="nameInputOverlay" style="display: none;">
+        <div class="name-input-popup" id="nameInputPopup">
+            <h2>NHẬP TÊN CỦA BẠN</h2>
+            <label for="playerNameInput">Tên người chơi:</label>
+            <input type="text" id="playerNameInput" placeholder="VD: Alice">
+            <div class="popup-buttons">
+                <button class="menu-button" id="startGameButton">BẮT ĐẦU</button>
+                <button class="menu-button cancel-button" id="cancelNameInputButton">HỦY</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="../audio/Pink Panther (Theme Song).mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ thẻ audio.
+    </audio>
+
+    <script src="../js/screen.js"></script>
+    <script src="../js/game.js"></script> 
+</body>
+</html>
